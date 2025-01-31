@@ -77,7 +77,8 @@ class tk_ui(object):
         except IOError:
             font_12 = ImageFont.load_default()  # 如果加载失败，则使用默认字体
         # self.cv.create_text(border_x+width/2,start_y + i*line_y,text=title_ln,fill ='#808080',anchor = "c",font=('Courier', 15, 'bold'))
-        draw.text((border_x+width/2,start_y + i*line_y),title_ln,fill ='#808080',anchor = "c",font=font)
+        w_width, w_height = draw.textsize(title_ln, font=font)
+        draw.text((border_x + width/2 - w_width//2,start_y + i*line_y),title_ln,fill ='#808080',anchor = "c",font=font)
         i = 1
         start_y = (height+border_y*2-(hl-1)*line_y)/2
         # lli = list(left_io.keys())
@@ -131,7 +132,7 @@ class tk_ui(object):
                 # self.cv.create_line(20,start_y + i*line_y-5,30,start_y + i*line_y+5,width=2)
                 draw.line((20, start_y + i*line_y-5, 30, start_y + i*line_y+5), fill='black', width=2)
                 # self.cv.create_text(30,start_y + i*line_y-10,text=signal_width,fill ='#000000',anchor = "w",font=('Courier', 12))
-                draw.text((30,start_y + i*line_y-10),str(signal_width),fill ='#000000',anchor = "w",font=font_12)
+                draw.text((30,start_y + i*line_y-11),str(signal_width),fill ='#000000',anchor = "w",font=font_12)
             i = i+1
 
         i = 1
@@ -186,9 +187,9 @@ class tk_ui(object):
                 # self.cv.create_line(width+2*border_x-10,start_y + i*line_y,width+border_x,start_y + i*line_y,width=4)
                 draw.line((width+2*border_x-10,start_y + i*line_y,width+border_x,start_y + i*line_y), fill='black', width=4)
                 # self.cv.create_line(width+border_x+20,start_y + i*line_y-5,width+border_x+30,start_y + i*line_y+5,width=2)
-                draw.line((width+border_x+20,start_y + i*line_y-5,width+border_x+30,start_y + i*line_y+5), fill='black', width=2)
+                draw.line((width+border_x+20,start_y + i*line_y-6,width+border_x+30,start_y + i*line_y+4), fill='black', width=2)
                 # self.cv.create_text(width+border_x+30,start_y + i*line_y-10,text=signal_width,fill ='#000000',anchor = "w",font=('Courier', 12))   
-                draw.text((width+border_x+30,start_y + i*line_y-10),str(signal_width),fill ='#000000',anchor = "w",font=font_12)
+                draw.text((width+border_x+30,start_y + i*line_y-12),str(signal_width),fill ='#000000',anchor = "w",font=font_12)
             i = i+1
 
         image.save(m_name+".png")
