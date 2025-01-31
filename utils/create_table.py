@@ -1,4 +1,6 @@
-# encoding: utf-8
+# coding: utf-8 
+# author: yyrwkk 
+
 from docx.oxml import OxmlElement  
 from docx.oxml.ns import qn
 from docx.shared import Pt
