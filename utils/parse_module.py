@@ -64,6 +64,10 @@ def read_line(s):
     if t == 'signal':
         divided = re.split(r"[,\s\)]",ln,1)
         sig_name = divided[0].strip()
+        if sig_name == ']':
+            ln = divided[1].strip()
+            divided = re.split(r"[,\s\)]",ln,1)
+            sig_name = divided[0].strip()
         sig = [sig_name, sig_io, sig_wid]
     return [t, sig, mname]
 

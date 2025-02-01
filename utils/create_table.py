@@ -46,7 +46,7 @@ def create_table(doc,tb_data,tb_header = ["信号名","位宽(bit)","I/O","描�
     for row in range(len( tb_data )):
         for col in range(len(tb_data[row])):
             tb_cell = table.cell(row+1, col)
-            tb_cell.text = tb_data[row][col]
+            tb_cell.text = str(tb_data[row][col])
             tb_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER # 垂直居中
 
 
