@@ -15,5 +15,5 @@ def insert_mdpic(doc,pic_path,pic_name = "xxx"):
     caption_para = doc.add_paragraph()
     caption_run = caption_para.add_run()
     caption_run.font.size = Pt(9)
-    caption_run.text = f"表x {pic_name}模块"
+    caption_run.text = f"图x {pic_name}模块"
     caption_para.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
